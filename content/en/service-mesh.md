@@ -27,7 +27,7 @@ uniformly across all services across a cluster without requiring code changes.
 Before service meshes, that functionality had to be encoded into every single service, 
 becoming a potential source of bugs and technical debt.
 
-In the [Sidecar Container] (/sidecar-container/) model, each microservice pod is paired with its own proxy.
+In the [Sidecar Container](/sidecar-container/) model, each microservice pod is paired with its own proxy.
 This per-service proxy intercepts L3-L7 traffic, enforcing load-balancing, mutual TLS, 
 tracing and metrics on a fine-grained basis.
 While this approach offers maximal policy flexibility and service-specific routing,
