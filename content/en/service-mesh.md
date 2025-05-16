@@ -37,5 +37,5 @@ A **Sidecarless** design, on the other hand,
 runs data-plane logic directly in the Linux kernel and combines mesh functionality into a small group of host-level agents that make use of kernel features like [eBPF] (/ebpf/).
 By doing away with per-pod proxies, this method drastically reduces resource usage and removes unnecessary network hops,
 which lowers latency and boosts performance.
-Because overhead remains constant regardless of pod count and there are tewer agents to deploy,
+Because overhead remains constant regardless of pod count and there are fewer agents to deploy,
 teams benefit from simplified operations and linear scalability as service numbers increase.
