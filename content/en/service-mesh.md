@@ -22,7 +22,7 @@ each one of these features will cause friction between teams and slow down devel
 
 ## How it helps
 
-Service meshes add reliability, observability, and security features
+Service meshes add reliability, observability, and security features 
 uniformly across all services across a cluster without requiring code changes. 
 Before service meshes, that functionality had to be encoded into every single service, 
 becoming a potential source of bugs and technical debt.
