@@ -2,7 +2,7 @@
 title: Service Mesh
 status: Completed
 category: technology
-tags: ["networking", "", ""]
+tags: ["networking", "infrastructure", "security"]
 ---
 
 In a [microservices](/microservices-architecture/) world, apps are broken down into multiple smaller [services](/service/) that communicate over a network. 
@@ -27,15 +27,18 @@ uniformly across all services across a cluster without requiring code changes.
 Before service meshes, that functionality had to be encoded into every single service, 
 becoming a potential source of bugs and technical debt.
 
-In the [Sidecar Container](/sidecar-container/) model, each microservice pod is paired with its own proxy.
-This per-service proxy intercepts L3-L7 traffic, enforcing load-balancing, mutual TLS, 
-tracing and metrics on a fine-grained basis.
-While this approach offers maximal policy flexibility and service-specific routing,
-it also incurs additional CPU and memory overhead for every proxy and increases operational complexity as the mesh grows.
+IIn the [Sidecar Container](/sidecar-container/) model, 
+each microservice pod is paired with its own proxy. 
+This per-service proxy intercepts and manages network traffic, 
+enforce security policies, balance workloads, and collect performance data for each individual service. 
+While this approach offers excellent control and service-specific traffic management, 
+it also uses more computing resources and becomes more complex to manage as your system grows.
 
 A **Sidecarless** design, on the other hand,
 runs data-plane logic directly in the Linux kernel and combines mesh functionality into a small group of host-level agents that make use of kernel features like [eBPF](/ebpf/).
-By doing away with per-pod proxies, this method drastically reduces resource usage and removes unnecessary network hops,
+By doing away with per-pod proxies,
+this method drastically reduces resource usage and removes unnecessary network hops,
 which lowers latency and boosts performance.
+
 Because overhead remains constant regardless of pod count and there are fewer agents to deploy,
 teams benefit from simplified operations and linear scalability as service numbers increase.
